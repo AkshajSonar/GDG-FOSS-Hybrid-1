@@ -1,0 +1,24 @@
+name: Deprecated – See pr-checks.yml
+
+# ─────────────────────────────────────────────────────────────
+#  This workflow has been superseded by the three-workflow
+#  architecture introduced for DevSphere v2:
+#
+#    fork-ci.yml    — feedback on fork pushes (participant's minutes)
+#    pr-checks.yml  — authoritative test run on PR open/update
+#    pr-grader.yml  — privileged grading (secrets, leaderboard, labels)
+#
+#  This file is kept to avoid breaking any external references
+#  but does NOT run automatically.  It can be deleted safely
+#  once all repos have been migrated.
+# ─────────────────────────────────────────────────────────────
+on:
+  workflow_dispatch:
+
+jobs:
+  notice:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "This workflow is deprecated."
+          echo "See fork-ci.yml / pr-checks.yml / pr-grader.yml."
