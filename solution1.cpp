@@ -2,16 +2,15 @@
 using namespace std;
 
 int main() {
-    int t; cin >> t;
-    while(t--){
+    int t;
+    cin >> t;
+    while(t--) {
         long long n, k;
         cin >> n >> k;
-        long long count = 0, current = 0;
-        while (count < k) {
-            current++;
-            if (current % n != 0) count++;
-        }
-        cout << current << endl;
+
+        long long ans = k + (k - 1) / (n - 1);
+
+        cout << ans << endl;
     }
     return 0;
 }
