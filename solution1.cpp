@@ -11,6 +11,8 @@ int main() {
             current++;
             if (current % n != 0) count++;
         }
+
+        
         cout << current << endl;
     }
     return 0;
